@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Code Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="./css/index.css" rel="stylesheet">
+	<!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg nav-bar-caece">
+  <img src="https://www.ucaecemdp.edu.ar/wp-content/uploads/2019/10/logo_caece.png" width="150" style="padding-left:15px"/> 
+  <span class="labo-remoto"><strong>Laboratorio Remoto</strong></span>
+  <span class="descrip-materia">- Materia: Introducción a la Informática.  Unidad: 2.</span>		
+</nav>
+    <div class="container">
+        <div class="question" style="padding-top:80px">	
+			<div class="dropdown">
+				  <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Ejercicios
+				  </button>
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				<a class="dropdown-item" href="#">Ejercicio 1</a>
+				<a class="dropdown-item" href="#">Ejercicio 2</a>
+				<a class="dropdown-item" href="#">Ejercicio 3</a>
+			  </div>
+			</div>
+		<div style="margin-top:10px;padding-top:10px">
+		
+            <h2 style="color:#fff"><strong>Ejercicio 1</strong></h2>Encontrar el número máximo en un arreglo de enteros.
+            <br/> Por ejemplo, en el arreglo [1, -3, 5], el número máximo es 5.</div>
+        </div>
+        <div class="code-area">
+            <textarea rows="20" class="input" id="code" autofocus>def solution(arr):</textarea>
+            <br/><br/>
+            <button onclick="runTests(this)">CORREGIR</button>
+			<button onclick="">DESCARGAR</button>
+            <br/><br/>
+            <span id="results"></span>
+        </div>
+    </div>
+    <script>
+        function runTests(btn) {
+            btn.style.display = "none";
+            document.getElementById("results").innerHTML = "Corriendo pruebas...";
+
+            const code = document.getElementById("code").value;
+            let xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("results").innerHTML = xhr.responseText;
+                    btn.style.display = "initial";
+                }
+            }
+
+            xhr.open("POST", "http://localhost:5000/test/");
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.send("code=" + code);
+        }
+    </script>
+	<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+
+</html>
