@@ -1,4 +1,5 @@
-from input_code import solution, doblar, sumar, es_par
+from input_code import solution
+#, doblar, sumar, es_par
 
 def get_test_cases():
     return {

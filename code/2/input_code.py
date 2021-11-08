@@ -1,2 +1,2 @@
-def sumar(arr):
-  return 0;
+def sumar(a,b):
+        return a+b    
