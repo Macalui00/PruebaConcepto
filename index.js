@@ -9,10 +9,11 @@ const CODE_FOLDER = "code";
 
 function testCode(req, res) {
   let code = req.body["code"];
-
+  let id = req.body["id"];
+  console.log("id",id)
   try {
-    fs.writeFileSync(path.join(__dirname, CODE_FOLDER, "input_code.py"), code);
-    const proc = exec("python3 " + path.join(CODE_FOLDER, "tests.py"));
+    fs.writeFileSync(path.join(__dirname, CODE_FOLDER, id, "input_code.py"), code);
+    const proc = exec("python3 " + path.join(CODE_FOLDER, id,"tests.py"));
     const results = proc.toString();
     console.log("Results: "+results);
     return res.send(results);
