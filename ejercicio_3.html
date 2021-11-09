@@ -193,10 +193,10 @@
                 }
             }
 
-            //Enviar el codigo generado.
-            xhr.open("POST", "http://localhost:5000/test/");
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhr.send("code=" + code);
+             //Enviar el codigo generado.
+             xhr.open("POST", "http://localhost:5000/test/");
+            xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+            xhr.send(JSON.stringify({ "code": code, "id":"3" }));
         }
     </script>
 	
