@@ -3,14 +3,18 @@ from input_code import factorial
 
 def get_test_cases():
     return {
-        "SMALL_INPUT": [1, 2, 3,5],
-        "LARGE_INPUT": [1, 2, 3] * 1000 + [4] * 20 + [5] + [6],
+        "CERO": 0,
+        "UNO": 1,
+        "CUATRO": 4,
+        "DIEZ": 10,
     }
 
 def get_expected_outputs():
     return {
-        "SMALL_INPUT": 5,
-        "LARGE_INPUT": 6,
+        "CERO": 1,
+        "UNO": 1,
+        "CUATRO": 24,
+        "DIEZ": 3628800,
     }
 
 def test_code():

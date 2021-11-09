@@ -1,3 +1,3 @@
-def factorial(a):
+def gen_primos(a):
  return 5
             
