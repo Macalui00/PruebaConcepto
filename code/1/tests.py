@@ -5,12 +5,15 @@ def get_test_cases():
     return {
         "SMALL_INPUT": [1, 2, 3,5],
         "LARGE_INPUT": [1, 2, 3] * 1000 + [4] * 20 + [5] + [6],
+        "LARGE_INPUT_2": [1, 2, 3] * 1000 + [4] * 20 + [5] + [7],
+        
     }
 
 def get_expected_outputs():
     return {
         "SMALL_INPUT": 5,
         "LARGE_INPUT": 6,
+        "LARGE_INPUT_2": 7,
     }
 
 def test_code():

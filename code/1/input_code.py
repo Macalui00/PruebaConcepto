@@ -1,2 +1,6 @@
 def solution(arr):
- return 5
+    max = 0
+    for i in range(1,len(arr)):
+       if arr[i] > max:
+          max = arr[i]
+    return max

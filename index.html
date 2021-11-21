@@ -158,6 +158,7 @@
             <br/><br/>
             <button onclick="runTests(this)">CORREGIR</button>
 			<button onclick="">DESCARGAR</button>
+			<button onclick="testThing(this)">PROBAR</button>
             <br/><br/>
             <span id="results"></span>
         </div>
@@ -166,22 +167,26 @@
         function runTests(btn) {
             btn.style.display = "none";
             document.getElementById("results").innerHTML = "Corriendo pruebas...";
-
             const code = document.getElementById("code").value;
             let xhr = new XMLHttpRequest();
-
             xhr.onreadystatechange = () => {
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     document.getElementById("results").innerHTML = xhr.responseText;
                     btn.style.display = "initial";
                 }
             }
-
             xhr.open("POST", "http://localhost:5000/test/");
             xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
             xhr.send(JSON.stringify({ "code": code, "id":"1" }));
-        
         }
+    </script>
+        
+    <script>
+            function testThing(btn){
+                    // ACA NO SE QUE VA XD
+                    //xhr.send(JSON.stringify({ "code": code, "id":"1" , "test": elCodigoDelAlumno}));
+                    
+            }
     </script>
 	<!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
