@@ -1,6 +1,6 @@
 def solution(arr):
-    max = 0
-    for i in range(1,len(arr)):
-       if arr[i] > max:
-          max = arr[i]
-    return max
+   max_value = None
+   for num in arr:
+       if (max_value is None or num > max_value):
+           max_value = num
+   return max_value

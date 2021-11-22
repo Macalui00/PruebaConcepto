@@ -28,11 +28,12 @@ function testCode(req, res) {
 function testSolution(req, res) {
   let code = req.body["code"];
   let id = req.body["id"];
-  let tests = req.test["test"];
+  let data = req.body["data"];
   console.log("id",id)
   try {
     fs.writeFileSync(path.join(__dirname, CODE_FOLDER, id, "input_code.py"), code);
-    const proc = exec("python3 " + path.join(CODE_FOLDER, id,"testSolution.py " + tests));
+    console.log("python3 " + path.join(CODE_FOLDER, id,"testSolution.py " + data));
+    const proc = exec("python3 " + path.join(CODE_FOLDER, id,"testSolution.py " + data));
     const results = proc.toString();
     console.log("Results: "+results);
     return res.send(results);
@@ -55,7 +56,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/test/', testCode);
-app.post('/testSolution/', testSolution);
+app.post('/test/data', testSolution);
 
 app.listen(5000, () =>
   console.log(`Listening on port 5000.`),
