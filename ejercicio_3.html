@@ -49,6 +49,10 @@
             height: 60%;
         }
 
+        .input, #results2 {
+            height: 60%;
+        }
+
         .input {
             border: 1px solid gray;
             width: 90%;
@@ -83,6 +87,10 @@
 		}
 
         #results {
+		  color: #fff;
+        }
+
+        #results2 {
 		  color: #fff;
         }
 
@@ -158,14 +166,19 @@
             </div>
         </div>
         <div class="code-area">
-            <textarea rows="20" class="input" id="code" autofocus>def factorial(a):
+            <textarea rows="20" class="input" id="code" autofocus>def factorial(a,b):
             </textarea>
             <br/><br/>
+            <textarea rows="2" class="input" id="datos" autofocus>ingrese aqui sus datos. EJ: 1,2</textarea>
+            <br/><br/>
+			<button onclick="testThing(this)">PROBAR</button>
+            <span id="results2"></span>
+            <br/><br/>
             <button onclick="runTests(this)">CORREGIR</button>
-            <!--El siguiente botón permitirá descargar la resolución y la calificación obtenida de las pruebas unitarias:-->
 			<button onclick="">DESCARGAR</button>
             <br/><br/>
             <span id="results"></span>
+            <br/><br/>
         </div>
     </div>
 
@@ -199,7 +212,24 @@
             xhr.send(JSON.stringify({ "code": code, "id":"3" }));
         }
     </script>
-	
+	<script>
+        function testThing(btn){
+                btn.style.display = "none";
+                document.getElementById("results2").innerHTML = "Corriendo pruebas...";
+                const code = document.getElementById("code").value;
+                const datos = document.getElementById("datos").value;
+                let xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = () => {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("results2").innerHTML = xhr.responseText;
+                    btn.style.display = "initial";
+                }
+        }
+            xhr.open("POST", "http://localhost:5000/test/data");
+            xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+            xhr.send(JSON.stringify({ "code": code, "id":"3" , "data": datos}));
+        }
+    </script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

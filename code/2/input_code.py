@@ -1,2 +1,2 @@
-def sumar(a,b):
-        return a+b    
+def gen_primos(a):
+            return a

@@ -1,2 +1,2 @@
-def factorial(a):
-            return 5
+def factorial(a,b):
+            return a+b

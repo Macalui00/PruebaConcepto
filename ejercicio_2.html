@@ -49,6 +49,10 @@
             height: 60%;
         }
 
+        .input, #results2 {
+            height: 60%;
+        }
+
         .input {
             border: 1px solid gray;
             width: 90%;
@@ -83,6 +87,10 @@
 		}
 
         #results {
+		  color: #fff;
+        }
+
+        #results2 {
 		  color: #fff;
         }
 
@@ -148,10 +156,8 @@
             <div style="margin-top:10px;padding-top:10px">
             
                 <h2 style="color:#fff"><strong>Ejercicio 2</strong></h2>Se requiere generar la siguiente función:
-                <!--<br/>- Doblar: que me permita obtener el doble de un número.<br/> Es decir que si ingreso 10 me retorne 20.-->
                 <br/>-Sumar: que me permita dado dos números obtener el  
                 <br/>resultado dela suma de los mismos.
-                <!--<br/>-Es_par: que me permita determinar si un número dado es par o no.-->
             </div>
             <div style="margin-top:10px;padding-top:10px">
                 <button onclick="window.location.href='./index.html'">Anterior</button>
@@ -162,11 +168,16 @@
             <textarea rows="20" class="input" id="code" autofocus>def sumar(a,b):
             </textarea>
             <br/><br/>
+            <textarea rows="2" class="input" id="datos" autofocus>ingrese aqui sus datos. EJ: 1,2</textarea>
+            <br/><br/>
+			<button onclick="testThing(this)">PROBAR</button>
+            <span id="results2"></span>
+            <br/><br/>
             <button onclick="runTests(this)">CORREGIR</button>
-            <!--El siguiente botón permitirá descargar la resolución y la calificación obtenida de las pruebas unitarias:-->
 			<button onclick="">DESCARGAR</button>
             <br/><br/>
             <span id="results"></span>
+            <br/><br/>
         </div>
     </div>
     <!-- Función para correr las pruebas unitarias correspondientes al ejercicio:
@@ -199,7 +210,24 @@
             xhr.send(JSON.stringify({ "code": code, "id":"2" }));
         }
     </script>
-
+    <script>
+        function testThing(btn){
+                btn.style.display = "none";
+                document.getElementById("results2").innerHTML = "Corriendo pruebas...";
+                const code = document.getElementById("code").value;
+                const datos = document.getElementById("datos").value;
+                let xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = () => {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("results2").innerHTML = xhr.responseText;
+                    btn.style.display = "initial";
+                }
+        }
+            xhr.open("POST", "http://localhost:5000/test/data");
+            xhr.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+            xhr.send(JSON.stringify({ "code": code, "id":"2" , "data": datos}));
+        }
+    </script>
 	<!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
