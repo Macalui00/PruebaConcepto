@@ -54,6 +54,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
+app.get('/index.html', (req, res) => {
+  res.sendFile(path.join(__dirname + '/index.html'));
+});
+app.get('/ejercicio_2.html', (req, res) => {
+  res.sendFile(path.join(__dirname + '/ejercicio_2.html'));
+});
+app.get('/ejercicio_3.html', (req, res) => {
+  res.sendFile(path.join(__dirname + '/ejercicio_3.html'));
+});
+app.get('/ejercicio_4.html', (req, res) => {
+  res.sendFile(path.join(__dirname + '/ejercicio_4.html'));
+});
 
 app.post('/test/', testCode);
 app.post('/test/data', testSolution);
