@@ -157,8 +157,8 @@
             <!--Consigna del Ejercicio Actual-->
             <div style="margin-top:10px;padding-top:10px">
             
-                <h2 style="color:#fff"><strong>Ejercicio 3</strong></h2>Se desea generar una función factorial para calcular el factorial de <br/>un número. 
-                Recordar las características y propiedades del factorial,<br/> números naturales.
+                <h2 style="color:#fff"><strong>Ejercicio 3</strong></h2>Se desea generar una función factorial para calcular <br/>el factorial de un número. 
+                <br/>Recordar las características y propiedades del factorial, <br/>números naturales.
             </div>
             <div style="margin-top:10px;padding-top:10px">
                 <button onclick="window.location.href='./ejercicio_2.html'">Anterior</button>
@@ -176,7 +176,7 @@
             <span id="results2"></span>
             <br/><br/>
             <button onclick="runTests(this)">CORREGIR</button>
-			<button onclick="">DESCARGAR</button>
+			<button onclick="download(this)">DESCARGAR</button>
             <br/><br/>
             <span id="results"></span>
             <br/><br/>
@@ -185,6 +185,13 @@
 
     <!-- Función para correr las pruebas unitarias correspondientes al ejercicio:
     IMPORTANTE, FALTA LA LOGICA PARA QUE DISCRIMINE EL EJERCICIO QUE SE ESTA RESOLVIENDO Y CORRA LAS UNIT TEST CORRESPONDIENTES PARA ESE EJERCICIO.-->
+    <script>
+        function download(btn) {
+            btn.style.display = "none";
+            document.getElementById("results").innerHTML = "Aun no implementado...";
+            btn.style.display = "initial";
+        }
+    </script>
     <script>
         function runTests(btn) {
             // Ocultar el botón de Corregir.

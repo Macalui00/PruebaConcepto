@@ -1,5 +1,4 @@
 from input_code import factorial
-#, doblar, sumar, es_par
 
 def get_test_cases():
     return {
@@ -31,9 +30,9 @@ def test_code():
         else:
             failed_test_cases.append(label)
 
-    print("Passed", passed_test_cases, "out of", test_cases_count, "test cases.")
+    print("Supero ", passed_test_cases, " de ", test_cases_count, " casos de prueba.")
     
     if len(failed_test_cases) > 0:
-        print("Test cases not passed:", ", ".join(failed_test_cases))
+        print("Casos de prueba no superados:", ", ".join(failed_test_cases))
 
 test_code()

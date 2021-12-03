@@ -1,16 +1,15 @@
 from input_code import gen_primos
-#, doblar, sumar, es_par
 
 def get_test_cases():
     return {
-        "SMALL_INPUT": 3,
-        "LARGE_INPUT": 7,
+        "CASO_SIMPLE": 3,
+        "CASO_COMPLEJO": 7,
     }
 
 def get_expected_outputs():
     return {
-        "SMALL_INPUT": [2,3,5],
-        "LARGE_INPUT": [2,3,5,7,11,13,17]
+        "CASO_SIMPLE": [2,3,5],
+        "CASO_COMPLEJO": [2,3,5,7,11,13,17]
     }
 
 def test_code():
@@ -27,9 +26,9 @@ def test_code():
         else:
             failed_test_cases.append(label)
 
-    print("Passed", passed_test_cases, "out of", test_cases_count, "test cases.")
+    print("Supero ", passed_test_cases, " de ", test_cases_count, " casos de prueba.")
     
     if len(failed_test_cases) > 0:
-        print("Test cases not passed:", ", ".join(failed_test_cases))
+        print("Casos de prueba no superados:", ", ".join(failed_test_cases))
 
 test_code()

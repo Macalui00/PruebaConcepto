@@ -169,12 +169,19 @@
             <span id="results2"></span>
             <br/><br/>
             <button onclick="runTests(this)">CORREGIR</button>
-			<button onclick="">DESCARGAR</button>
+			<button onclick="download(this)">DESCARGAR</button>
             <br/><br/>
             <span id="results"></span>
             <br/><br/>
         </div>
     </div>
+    <script>
+        function download(btn) {
+            btn.style.display = "none";
+            document.getElementById("results").innerHTML = "Aun no implementado...";
+            btn.style.display = "initial";
+        }
+    </script>
     <script>
         function runTests(btn) {
             btn.style.display = "none";

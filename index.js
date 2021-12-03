@@ -18,10 +18,9 @@ function testCode(req, res) {
     console.log("Results: "+results);
     return res.send(results);
   } catch (error) {
-    console.log("An error occurred");
+    console.log("Ha ocurrido un error.");
     console.log(error);
-
-    return res.send("An error occurred.");
+    return res.send("Ha ocurrido un error.");
   }
 }
 
@@ -38,19 +37,16 @@ function testSolution(req, res) {
     console.log("Results: "+results);
     return res.send(results);
   } catch (error) {
-    console.log("An error occurred");
+    console.log("Ha ocurrido un error.");
     console.log(error);
-
-    return res.send("An error occurred.");
+    return res.send("Ha ocurrido un error.");
   }
 }
 
 const app = express();
-
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
@@ -66,10 +62,8 @@ app.get('/ejercicio_3.html', (req, res) => {
 app.get('/ejercicio_4.html', (req, res) => {
   res.sendFile(path.join(__dirname + '/ejercicio_4.html'));
 });
-
 app.post('/test/', testCode);
 app.post('/test/data', testSolution);
-
 app.listen(5000, () =>
   console.log(`Listening on port 5000.`),
 );
