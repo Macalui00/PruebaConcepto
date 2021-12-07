@@ -156,34 +156,33 @@
 <div class="container" style="margin-top:20px">
   <div class="row">
     <div class="col" style="text-align:left">
-        <div class="question" style="padding-top:80px">	
-            <div class="dropdown">
-                <button class="dropbtn">Listado de Ejercicios</button>
-                <div class="dropdown-content">
-                <a href="./index.html">Ejercicio 1</a>
-                <a href="./ejercicio_2.html">Ejercicio 2</a>
-                <a href="./ejercicio_3.html">Ejercicio 3</a>
-                <a href="./ejercicio_4.html">Ejercicio 4</a>
-                </div>
+        <div class="dropdown">
+            <button class="dropbtn">Listado de Ejercicios</button>
+            <div class="dropdown-content">
+            <a href="./index.html">Ejercicio 1</a>
+            <a href="./ejercicio_2.html">Ejercicio 2</a>
+            <a href="./ejercicio_3.html">Ejercicio 3</a>
+            <a href="./ejercicio_4.html">Ejercicio 4</a>
             </div>
-            <div style="margin-top:10px;padding-top:10px">
-            
-                <h2 style="color:#fff"><strong>Ejercicio 2</strong></h2>Se requiere generar la siguiente función:
-                <br/>-Sumar: que me permita dado dos números obtener el  
-                <br/>resultado dela suma de los mismos.
-            </div>
-            <div style="margin-top:10px;padding-top:10px">
-                <button onclick="window.location.href='./index.html'">Anterior</button>
-                <button onclick="window.location.href='./ejercicio_3.html'">Siguiente</button>
-            </div>
-        </div>	
+        </div>
+        <div style="margin-top:10px;padding-top:10px;color:#fff">
+            <h2 style="color:#fff"><strong>Ejercicio 2</strong></h2>
+            <p>Se requiere generar la siguiente función:
+            <br/>- Sumar: que me permita dado dos números obtener el resultado de la suma de los mismos.</p>
+        </div>
+        <div style="margin-top:10px;padding-top:10px">
+            <button onclick="window.location.href='./index.html'">Anterior</button>
+            <button onclick="window.location.href='./ejercicio_3.html'">Siguiente</button>
+        </div>
 	</div>
 	<div class="col">	
 		<div class="code-area">
-            <textarea rows="20" class="input" id="code" autofocus>def sumar(a,b):
-            </textarea>
-            <br/><br/>
-            <textarea rows="2" class="input" id="datos" autofocus>ingrese aqui sus datos. EJ: 1,2</textarea>
+            <div id="area_resolucion">
+                <textarea rows="20" class="input" id="code" autofocus>def sumar(a,b):</textarea>
+            </div>
+            <div id="area_datos" style="margin-top:10px; margin-bottom:10px">
+                <textarea rows="2" class="input" id="datos" autofocus>ingrese aqui sus datos. EJ: 1,2</textarea>
+            </div>
             <div id="btn-probar" style="margin-top:10px; margin-bottom:10px">
 				<button onclick="testThing(this)">PROBAR</button>
 			</div>

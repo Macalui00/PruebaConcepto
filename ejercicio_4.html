@@ -155,43 +155,44 @@
 <div class="container" style="margin-top:20px">
   <div class="row">
     <div class="col" style="text-align:left">
-        <div class="question" style="padding-top:80px">	
-            <!--Desplegable de listado de ejercicios:-->
-            <div class="dropdown">
-                <button class="dropbtn">Listado de Ejercicios</button>
-                <div class="dropdown-content">
-                <a href="./index.html">Ejercicio 1</a>
-                <a href="./ejercicio_2.html">Ejercicio 2</a>
-                <a href="./ejercicio_3.html">Ejercicio 3</a>
-                <a href="./ejercicio_4.html">Ejercicio 4</a>
-                </div>
+        <!--Desplegable de listado de ejercicios:-->
+        <div class="dropdown">
+            <button class="dropbtn">Listado de Ejercicios</button>
+            <div class="dropdown-content">
+            <a href="./index.html">Ejercicio 1</a>
+            <a href="./ejercicio_2.html">Ejercicio 2</a>
+            <a href="./ejercicio_3.html">Ejercicio 3</a>
+            <a href="./ejercicio_4.html">Ejercicio 4</a>
             </div>
-            <!--Consigna del Ejercicio Actual-->
-            <div style="margin-top:10px;padding-top:10px">
-            
-                <h2 style="color:#fff"><strong>Ejercicio 4</strong></h2>Generar una lista de números primos naturales consecutivos <br/>de tamaño 'a'.
-            </div>
-            <div style="margin-top:10px;padding-top:10px">
-                <button onclick="window.location.href='./ejercicio_3.html'">Anterior</button>
-            </div>
+        </div>
+        <!--Consigna del Ejercicio Actual-->
+        <div style="margin-top:10px;padding-top:10px;color:#fff">
+            <h2 style="color:#fff"><strong>Ejercicio 4</strong></h2>
+            <p>Generar una lista de números primos naturales consecutivos <br/>de tamaño 'a'.</p>
+        </div>
+        <div style="margin-top:10px;padding-top:10px">
+            <button onclick="window.location.href='./ejercicio_3.html'">Anterior</button>
         </div>
     </div>
     <div class="col">		
         <div class="code-area">
-            <textarea rows="20" class="input" id="code" autofocus>def gen_primos(a):</textarea>
-            <br/><br/>
-            <textarea rows="2" class="input" id="datos" autofocus>ingrese aqui sus datos. EJ: 1,2</textarea>
+            <div id="area_resolucion">
+                <textarea rows="20" class="input" id="code" autofocus>def gen_primos(a):</textarea>
+            </div>
+            <div id="area_datos" style="margin-top:10px; margin-bottom:10px">
+                <textarea rows="2" class="input" id="datos" autofocus>ingrese aqui sus datos. EJ: 1,2</textarea>
+            </div>
             <div id="btn-probar" style="margin-top:10px; margin-bottom:10px">
 				<button onclick="testThing(this)">PROBAR</button>
 			</div>
-			<div id="area_resul_prueba" style="">
+			<div id="area_resul_prueba">
 				<span id="results2"></span>
 			</div>
             <div id="btn-corr-desc" style="margin-top:10px; margin-bottom:10px">
 				<button onclick="runTests(this)">CORREGIR</button>
 				<button onclick="download(this)">DESCARGAR</button>
 			</div>
-			<div id="area_resul_correc" style="">
+			<div id="area_resul_correc">
 				<span id="results"></span>
 			</div>
         </div>
